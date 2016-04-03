@@ -1,8 +1,8 @@
+const Forecast = require(`${process.cwd()}/src/app/controllers/forecast.js`);
+
 module.exports = function (app) {
+  const forecast = new Forecast();
+
   app.route('/')
-    .get((req, res) => {
-      res.type('text/plain');
-      res.status(404);
-      res.send('HOME PAGE');
-    });
+    .get(forecast.fetchMountainAreas);
 };
