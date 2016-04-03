@@ -1,0 +1,26 @@
+{
+  "name": "mountain-forecast",
+  "version": "1.0.0",
+  "description": "A simple application that uses Met Office DataPoint to provide weather information for mountainous areas in the UK. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlieharris1/mountain-forecast.git"
+  },
+  "author": "Charlie Harris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charlieharris1/mountain-weather/issues"
+  },
+  "homepage": "https://github.com/charlieharris1/mountain-weather#readme",
+  "dependencies": {
+    "babel-register": "^6.7.2",
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "babel-preset-stage-0": "^6.5.0"
+  }
+}
