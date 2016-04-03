@@ -4,7 +4,8 @@
   "description": "A simple application that uses Met Office DataPoint to provide weather information for mountainous areas in the UK. ",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "lint": "eslint --ext .js ./"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,9 @@
     "express": "^4.13.4"
   },
   "devDependencies": {
-    "babel-preset-stage-0": "^6.5.0"
+    "babel-preset-stage-0": "^6.5.0",
+    "eslint": "^2.6.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-react": "^4.2.3"
   }
 }
