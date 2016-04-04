@@ -1,6 +1,6 @@
 const request = require('request-promise');
 const config = require('../../../config/default.json');
-const mountainAreaUrl = `http://datapoint.metoffice.gov.uk/public/data/txt/wxfcs/mountainarea/json/capabilities?key=${config.apiKey}`;
+const mountainAreaUrl = `http://datapoint.metoffice.gov.uk/public/data/txt/wxfcs/mountainarea/json/sitelist?key=${config.apiKey}`;
 const requestOptions = {
   uri: mountainAreaUrl,
   json: true,
