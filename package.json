@@ -2,7 +2,7 @@
   "name": "mountain-forecast",
   "version": "1.0.0",
   "description": "A simple application that uses Met Office DataPoint to provide weather information for mountainous areas in the UK. ",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "test",
     "lint": "eslint --ext .js ./"

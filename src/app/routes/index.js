@@ -1,6 +1,6 @@
-const Forecast = require(`${process.cwd()}/src/app/controllers/forecast.js`);
+import Forecast from '../controllers/forecast';
 
-module.exports = function (app) {
+export default (app) => {
   const forecast = new Forecast();
 
   app.route('/')
