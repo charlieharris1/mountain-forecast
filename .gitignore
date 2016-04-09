@@ -5,3 +5,4 @@ npm-debug.log
 npm-debug.log.*
 *.sublime-*
 config/default.json
+src/ui/dist/
