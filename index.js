@@ -3,10 +3,14 @@ import routes from './src/app/routes/index.js';
 import path from 'path';
 import request from 'request-promise';
 import config from './config/default.json';
-const mountainAreaUrl = `http://datapoint.metoffice.gov.uk/public/data/txt/wxfcs/mountainarea/json/sitelist?key=${config.apiKey}`;
 
-const transformLocationData = (rawData) => rawData.Locations.Location;
-const requestOptions = { uri: mountainAreaUrl, json: true };
+const mountainAreaUrl = `http://datapoint.metoffice.gov.uk/public/data/txt/wxfcs/mountainarea/json/capabilities?key=${config.apiKey}`;
+const requestOptions = {
+  uri: mountainAreaUrl,
+  json: true,
+};
+const transformLocationData = (rawData) => rawData.MountainForecastList.MountainForecast;
+
 const app = express();
 
 app.set('port', process.env.PORT || 3000);

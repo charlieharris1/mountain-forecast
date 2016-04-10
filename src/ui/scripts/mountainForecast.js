@@ -1,3 +1,13 @@
+var Area = React.createClass({
+  render: function() {
+    return (
+      <div className="area">
+        <h4 className="areaName"> {this.props.name}: {this.props.children.Risk} </h4>
+      </div>
+    );
+  }
+});
+
 const MountainAreaBox = React.createClass({
   loadAreasFromServer: function() {
     $.ajax({
@@ -33,9 +43,9 @@ const MountainAreaList = React.createClass({
   render: function() {
     const areaNodes = this.props.data.map(function(area) {
       return (
-        <p name={area['@name']} key={area['@id']}>
-          {area['@name']}
-        </p>
+        <Area name={area.Area} key={area.Area}>
+          {area}
+        </Area>
       );
     });
     return (
