@@ -59,3 +59,8 @@ p, ul {
 ul {
     padding-left: 30px;
 }
+
+.detailedAreaForecast {
+    font-size: 0.75em;
+    font-weight: normal;
+}
