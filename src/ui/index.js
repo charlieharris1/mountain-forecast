@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './components/MountainContainer.jsx';
 
 ReactDOM.render(
-  <App url="/api/mountainAreas" pollInterval={30000} />,
+  <App />,
   document.getElementById('app')
 );

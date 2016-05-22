@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/charlieharris1/mountain-weather#readme",
   "dependencies": {
+    "axios": "^0.11.1",
     "babel-plugin-syntax-class-properties": "^6.5.0",
     "babel-plugin-transform-class-properties": "^6.6.0",
     "babel-preset-es2015-node5": "^1.2.0",
@@ -26,6 +27,7 @@
     "babel-register": "^6.7.2",
     "express": "^4.13.4",
     "express-react-views": "^0.10.1",
+    "jquery": "^2.2.4",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "request-promise": "^2.0.1"

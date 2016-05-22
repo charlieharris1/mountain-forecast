@@ -1,34 +1,33 @@
-import React from 'React';
+import React from 'react';
 import MountainAreaList from './MountainAreaList.jsx';
+import axios from 'axios';
 
-const MountainContainer = React.createClass({
-  loadAreasFromServer: function() {
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      cache: false,
-      success: function(data) {
-        this.setState({ data });
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
-  getInitialState: function() {
-    return { data: [] };
-  },
-  componentDidMount: function() {
+export default class MountainContainer extends React.Component {
+  constructor() {
+    super();
+    this.loadAreasFromServer = this.loadAreasFromServer.bind(this);
+    this.state = {
+      weatherData: [],
+    };
+  }
+
+  componentDidMount() {
     this.loadAreasFromServer();
-    setInterval(this.loadAreasFromServer, this.props.pollInterval);
-  },
-  render: function() {
+    setInterval(this.loadAreasFromServer, 300000);
+  }
+
+  loadAreasFromServer() {
+    axios.get('api/mountainAreas')
+      .then((response) => {
+        this.setState({ weatherData: response.data });
+      });
+  }
+
+  render() {
     return (
       <div className="commentBox">
-        <MountainAreaList data={this.state.data} />
+        <MountainAreaList weatherData={this.state.weatherData} />
       </div>
     );
   }
-});
-
-export default MountainContainer;
+}
