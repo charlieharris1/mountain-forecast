@@ -6,8 +6,7 @@
   "scripts": {
     "test": "test",
     "lint": "eslint --ext .js ./",
-    "build-assets": "./node_modules/gulp/bin/gulp.js build",
-    "watch-assets": "./node_modules/gulp/bin/gulp.js watch"
+    "build-assets": "webpack --config ./webpack.config.babel.js"
   },
   "repository": {
     "type": "git",
@@ -20,15 +19,24 @@
   },
   "homepage": "https://github.com/charlieharris1/mountain-weather#readme",
   "dependencies": {
+    "axios": "^0.11.1",
+    "babel-plugin-syntax-class-properties": "^6.5.0",
+    "babel-plugin-transform-class-properties": "^6.6.0",
+    "babel-preset-es2015-node5": "^1.2.0",
     "babel-preset-react": "^6.5.0",
     "babel-register": "^6.7.2",
     "express": "^4.13.4",
+    "express-react-views": "^0.10.1",
+    "jquery": "^2.2.4",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "request-promise": "^2.0.1"
   },
   "devDependencies": {
+    "babel-core": "^6.7.6",
+    "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
@@ -38,6 +46,7 @@
     "event-stream": "^3.3.2",
     "glob": "^7.0.3",
     "gulp": "^3.9.1",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "webpack": "^2.0.6-beta"
   }
 }

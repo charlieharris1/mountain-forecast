@@ -1,2 +1,3 @@
+'use strict';
 require('babel-register');
-require('./index.js');
+module.exports = require('./src/server');

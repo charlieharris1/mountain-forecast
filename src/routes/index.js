@@ -6,3 +6,4 @@ export default (app) => {
   app.route('/')
     .get(forecast.fetchMountainAreas);
 };
+
