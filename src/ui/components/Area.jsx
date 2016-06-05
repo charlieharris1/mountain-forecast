@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 export default class Area extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      name: this.props.name,
+      risk: this.props.children.Risk,
       more: false,
     };
   }
@@ -17,7 +19,7 @@ export default class Area extends React.Component {
 
     return (
       <div className="area">
-        <h4 className="areaName" onClick={this.handleClick.bind(this)}> {this.props.name}: {this.props.children.Risk} {plusMinus}
+        <h4 className="areaName" onClick={this.handleClick.bind(this)}> {this.state.name}: {this.state.Risk} {plusMinus}
           <p className="detailedAreaForecast">
             {detailedForecast}
           </p>
@@ -26,3 +28,8 @@ export default class Area extends React.Component {
     );
   }
 }
+
+Area.propTypes = {
+  name: PropTypes.string.isRequired,
+  children: PropTypes.object.isRequired,
+};

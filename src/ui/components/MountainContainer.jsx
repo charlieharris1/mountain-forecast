@@ -5,10 +5,7 @@ import axios from 'axios';
 export default class MountainContainer extends React.Component {
   constructor() {
     super();
-    this.loadAreasFromServer = this.loadAreasFromServer.bind(this);
-    this.state = {
-      weatherData: [],
-    };
+    this.state = { weatherData: [] };
   }
 
   componentDidMount() {
@@ -18,14 +15,12 @@ export default class MountainContainer extends React.Component {
 
   loadAreasFromServer() {
     axios.get('api/mountainAreas')
-      .then((response) => {
-        this.setState({ weatherData: response.data });
-      });
+      .then((response) => this.setState({ weatherData: response.data }));
   }
 
   render() {
     return (
-      <div className="commentBox">
+      <div className="mountainAreaListContainer">
         <MountainAreaList weatherData={this.state.weatherData} />
       </div>
     );
