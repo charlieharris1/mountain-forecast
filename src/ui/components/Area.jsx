@@ -33,11 +33,12 @@ export default class Area extends React.Component {
 
     return (
       <div className="area">
-        <h4 className="areaName" onClick={this.handleClick.bind(this)}> {this.state.name}: {this.state.risk} {plusMinus}
+        <div className="areaName" onClick={this.handleClick.bind(this)}>
+          <h4> {this.state.name}: {this.state.risk} {plusMinus}</h4>
           <p className="detailedAreaForecast">
             {detailedForecast}
           </p>
-        </h4>
+        </div>
       </div>
     );
   }
