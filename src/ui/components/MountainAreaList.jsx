@@ -12,7 +12,7 @@ export default class MountainAreaList extends React.Component {
   render() {
     const areaNodes = this.state.weatherData.map((area) =>
       (
-        <Area name={area.Area} key={area.Area} uri={area.URI}>
+        <Area name={area.Area} key={area.Area} uri={area.URI} risk={area.Risk}>
           {area}
         </Area>
       )

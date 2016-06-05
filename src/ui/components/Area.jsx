@@ -6,7 +6,7 @@ export default class Area extends React.Component {
     super(props);
     this.state = {
       name: this.props.name,
-      risk: this.props.children.Risk,
+      risk: this.props.risk,
       uri: this.props.uri,
       data: {},
       more: false,
@@ -33,7 +33,7 @@ export default class Area extends React.Component {
 
     return (
       <div className="area">
-        <h4 className="areaName" onClick={this.handleClick.bind(this)}> {this.state.name}: {this.state.Risk} {plusMinus}
+        <h4 className="areaName" onClick={this.handleClick.bind(this)}> {this.state.name}: {this.state.risk} {plusMinus}
           <p className="detailedAreaForecast">
             {detailedForecast}
           </p>
@@ -46,5 +46,5 @@ export default class Area extends React.Component {
 Area.propTypes = {
   name: PropTypes.string.isRequired,
   uri: PropTypes.string.isRequired,
-  children: PropTypes.object.isRequired,
+  risk: PropTypes.string.isRequired,
 };
