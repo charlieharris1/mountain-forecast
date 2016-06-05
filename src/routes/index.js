@@ -8,5 +8,8 @@ export default (app) => {
 
   app.route('/api/mountainAreas')
     .get(forecast.fetchMountainAreaData);
+
+  app.route('/api/areaSpecificData')
+    .get(forecast.areaSpecificData);
 };
 

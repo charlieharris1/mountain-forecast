@@ -6,10 +6,13 @@ export default class MountainAreaList extends React.Component {
     super(props);
     this.state = { weatherData: props.weatherData };
   }
+  componentWillReceiveProps(nextProps) {
+    this.setState({ weatherData: nextProps.weatherData });
+  }
   render() {
     const areaNodes = this.state.weatherData.map((area) =>
       (
-        <Area name={area.Area} key={area.Area}>
+        <Area name={area.Area} key={area.Area} uri={area.URI}>
           {area}
         </Area>
       )
@@ -23,5 +26,5 @@ export default class MountainAreaList extends React.Component {
   }
 }
 
-MountainAreaList.propTypes = { weatherData: PropTypes.object.isRequired };
+MountainAreaList.propTypes = { weatherData: PropTypes.array.isRequired };
 

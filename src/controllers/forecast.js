@@ -7,7 +7,19 @@ const requestOptions = {
   json: true,
 };
 
-const transformLocationData = (rawData) => rawData.MountainForecastList.MountainForecast;
+const areaSpecificReqOptions = (uri) => {
+  let newUri = uri.replace(/\{format\}/i, 'json');
+  newUri = newUri.replace(/\{key\}/i, `${config.apiKey}`);
+
+  return {
+    uri: newUri,
+    json: true,
+  };
+}
+
+const transformLocationData = (rawData) => {
+  return rawData.MountainForecastList.MountainForecast;
+};
 
 export default class Forecast {
   basicPage(req, res) {
@@ -18,6 +30,12 @@ export default class Forecast {
     request(requestOptions)
       .then((rawLocationData) => transformLocationData(rawLocationData))
       .then((transformedLocations) => res.json(transformedLocations))
+      .catch((err) => console.error(err));
+  }
+
+  areaSpecificData(req, res) {
+    request(areaSpecificReqOptions(req.query.uri))
+      .then((areaData) => res.json(areaData))
       .catch((err) => console.error(err));
   }
 }
