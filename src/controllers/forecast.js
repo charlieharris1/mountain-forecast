@@ -6,18 +6,18 @@ const requestOptions = {
   uri: mountainAreaUrl,
   json: true,
 };
-const transformLocationData = (rawData) => {
-  const getAreaAndRiskLevel = (area) => ({ area: area.Area, risk: area.Risk });
-  return rawData.MountainForecastList.MountainForecast.map(getAreaAndRiskLevel);
-}
+
+const transformLocationData = (rawData) => rawData.MountainForecastList.MountainForecast;
 
 export default class Forecast {
-  fetchMountainAreas(req, res) {
+  basicPage(req, res) {
+    res.render('Layout');
+  }
+
+  fetchMountainAreaData(req, res) {
     request(requestOptions)
-      .then((rawAreaData) => transformLocationData(rawAreaData))
-      .then((data) => {
-        return res.render('Layout');
-      })
+      .then((rawLocationData) => transformLocationData(rawLocationData))
+      .then((transformedLocations) => res.json(transformedLocations))
       .catch((err) => console.error(err));
   }
 }
