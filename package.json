@@ -6,7 +6,8 @@
   "scripts": {
     "test": "test",
     "lint": "eslint --ext .js ./",
-    "build-assets": "webpack --config ./webpack.config.babel.js"
+    "build-assets": "webpack --config ./webpack.config.babel.js",
+    "watch-assets": "webpack --config ./webpack.config.babel.js --watch"
   },
   "repository": {
     "type": "git",
