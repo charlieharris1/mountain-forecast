@@ -1,6 +1,7 @@
 import React from 'react';
 import MountainAreaList from './MountainAreaList.jsx';
 import axios from 'axios';
+require('../../public/sass/client.scss');
 
 export default class MountainContainer extends React.Component {
   constructor() {

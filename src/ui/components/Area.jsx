@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import axios from 'axios';
+require('../../public/sass/client.scss');
 
 export default class Area extends React.Component {
   constructor(props) {
@@ -30,11 +31,13 @@ export default class Area extends React.Component {
   render() {
     const detailedForecast = this.state.more ? this.state.data.report.Overview : '';
     const plusMinus = this.state.more ? '-' : '+';
+    let riskTextStyle = `risk-${this.state.risk.toLowerCase()}`;
+    riskTextStyle = riskTextStyle.replace(/\s+/g, '-');
 
     return (
       <div className="area">
         <div className="areaName" onClick={this.handleClick.bind(this)}>
-          <h4> {this.state.name}: {this.state.risk} {plusMinus}</h4>
+          <h4> {this.state.name}: <span className={riskTextStyle}>{this.state.risk}</span> {plusMinus}</h4>
           <p className="detailedAreaForecast">
             {detailedForecast}
           </p>

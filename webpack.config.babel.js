@@ -24,6 +24,10 @@ export default {
           plugins: ['syntax-class-properties', 'transform-class-properties'],
         },
       },
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass'],
+      },
     ],
   },
   resolve: {

@@ -1,0 +1,19 @@
+.mountainAreaListContainer {
+  max-width: 650px;
+  margin: 20px 0;
+  color: #2b2828;
+  padding-left: 20px;
+}
+
+.risk-high {
+  color: red;
+}
+.risk-medium {
+  color: orange;
+}
+.risk-low {
+  color: cornflowerblue;
+}
+.risk-no-risk {
+  color: green;
+}
